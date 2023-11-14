@@ -3,6 +3,6 @@ services :
   web :
      image : "chaithrahr99/django"
      ports :
-         - "8002:8002"
+         - "8000:8000"
      volumes:
       - ./volume/store_data/db.sqlite3:/data/db.sqlite3
