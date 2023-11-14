@@ -1,7 +1,7 @@
 version : "3.3"
 services :
   web :
-     build : .
+     image : "chaithrahr99/django"
      ports :
          - "8002:8002"
      volumes:
