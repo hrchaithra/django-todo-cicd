@@ -13,7 +13,7 @@ pipeline{
     }
     stage("Push to docker"){
       steps{
-        withCredentials([usernamePassword(CredentialsId:"dockerhub",passwordVariable:"dockerhubPass",usernameVariable:"dockerhubUser")]){
+        withCredentials([usernamePassword(credentialsId:"dockerhub",passwordVariable:"dockerhubPass",usernameVariable:"dockerhubUser")]){
         sh "docker tag django:latest ${env.dockerhubUser}/django:latest"
         sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPass}"
         sh "docker push ${env.dockerhubUser}/django:latest"
